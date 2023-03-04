@@ -9,5 +9,17 @@ public class Main {
 
         // Create an instance of the Replace class and call the charReplace method (see Replace.java for more info)
 
+        Pyramid.Output();
+
+        Adlibs a = new Adlibs();
+        String answer = a.story("Nidaa", 20, "Blue");
+        System.out.println(answer);
+
+        Replace b = new Replace();
+        System.out.println(b.charReplace("Lifting", 4, 's'));
+
+
+     
+
     }
 }
