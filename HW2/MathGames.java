@@ -12,7 +12,16 @@ public class MathGames {
     // Hypotenuse and Perpendicular and return the base.
     // Example 1: pythagorean(3,4) would return 5
 
-
+    public static double PythagoreanTheorem(double a, double b){
+       
+       
+        double base = Math.pow(a, 2);
+        double perpendicular = Math.pow(b, 2);
+        double cSquared = base + perpendicular;
+        double c = Math.sqrt(cSquared);
+         return c;
+ 
+     }
 
     
     // 2. Create a method that will calcuate my grade in the class. You can use the grade range as follows
@@ -28,7 +37,26 @@ public class MathGames {
         // Hint 3: You will probably need to use the Math.ceil() method
         // Example: grade(69.3) would return a D
 
-
+        public static String GradeCalculator(double gradePoint){
+            String Grade = "";
+            double roundedGrade = Math.ceil(gradePoint);
+            if(roundedGrade>=90){
+                return "A";
+            }
+            else if(roundedGrade<=89 && roundedGrade>=80){
+                return "B";
+            }
+            else if(roundedGrade<=79 && roundedGrade>=70){
+                return "C";
+            }
+            else if(roundedGrade<=69 && roundedGrade>=60){
+                return "D";
+            }
+            else if(roundedGrade<60 && roundedGrade>=0){
+                return "F";
+            }
+            return Grade;
+    }
 
 
 
@@ -42,12 +70,22 @@ public class MathGames {
     //      Hint 4: You will probably need to use the Math.ceil() method
     //      Example: tip(100, 4, 18) would return 5.0
 
-    
+    public static double tipCalculator(double total, int peopleSplit, double percentTip){
+        double tip = percentTip/100;
+        Math.ceil(total);
+        double totalTip = tip * total;
+        double tipPerPerson = totalTip/peopleSplit;
+        Math.ceil(tipPerPerson);
+        return tipPerPerson;
+    }
  
 
 
     // You can either create a tester class or put your code here
      public static void main(String[] args){
+        System.out.println(PythagoreanTheorem(3,4));
+        System.out.println(GradeCalculator(69.3));
+        System.out.println(tipCalculator(100, 4, 18));
         
     }
 }
