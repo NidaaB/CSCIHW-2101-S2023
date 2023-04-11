@@ -1,59 +1,35 @@
 package Project1;
 
 import java.util.Scanner;
-/*
- * Appas Bank
- * Bank Account Parameters:
- * public Name -> String ✓
- * private Balance -> double ✓ 
- * private Date of Birth -> String ✓
- * private SSN -> int (Maybe String) ✓
- * private Account Number -> int ✓
- * 
- * Bank Account Methods:
- * Constructor 
- * Getters and Setters
- * Deposit
- * Withdraw
- * Transfer (HomeWork)
- * Balance
- * Menu
- * Compound Interest
- * Simple Interest (HomeWork)
- * Authentication Basic
- * Authentication Advanced (HomeWork?)
- * 
- * Bank Account Constructor
- * Name, Balance, SSN, Account Number, Date of Birth
- * Name, SSN
- */
+
 
 public class BankAccount {
-    public double Balance;
-    
+    public double balance;
+
     public BankAccount(){
         balance = 0;
     }
 
-    public BankAccount(double initalBalance) {
-        balance = initalBalance;
+    public BankAccount(double initialBalance){
+        balance = initialBalance;
     }
 
-    public void deposit(double amount) {
+    public void deposit(double amount){
         balance = balance + amount;
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount){
         balance = balance - amount;
     }
-   
-    public double getBalance() {
+
+    public double getBalance(){
         return balance;
     }
 
-    public void monthlyFee() {
+    public void monthlyFee(){
         withdraw(10);
     }
+
     public void calcCompoundInterest(double p, int t, double r, int n){
         double amount = p * Math.pow(1 + (r / n), n*t);
         double compinterest = amount - p;
@@ -91,7 +67,7 @@ public class BankAccount {
 
         return selection;
     }
-
+    
     public void overdraft(int withdraw, BankAccount Bank){
         try (Scanner input = new Scanner(System.in)) {
             {
@@ -151,18 +127,5 @@ public class BankAccount {
 
                 }
         }
-        }
-    }
-
-    public void authenticationBasic(BankAccount Bank){
-        try (Scanner input = new Scanner(System.in)) {
-            System.out.println("Please enter your password.");
-            String password = input.nextLine();
-            if(password.equals("password")){
-                System.out.println("Welcome to your account.");
-            }
-            else{
-                System.out.println("Incorrect password.");
-            }
         }
     }
